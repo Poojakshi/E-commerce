@@ -1,0 +1,242 @@
+ <!-- <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <h2>Contact Us</h2>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+              <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="contactFormModel.name">
+              </div>
+  
+              <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="contactFormModel.email">
+              </div>
+
+              <div class="form-group">
+                <label for="mobile">Mobile No.:</label>
+                <input type="mobile" id="mobile" name="mobile" class="form-control" required pattern="0-9" [(ngModel)]="contactFormModel.number">
+                
+              </div>
+  
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" class="form-control" rows="4" required [(ngModel)]="contactFormModel.message"></textarea>
+              </div><br>
+             
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div *ngIf="formSubmitted" class="alert alert-success mt-3" role="alert">
+                Form submitted successfully!
+              </div>
+              <div *ngIf="formError" class="alert alert-danger mt-3" role="alert">
+                Form submission failed. Please try again later.
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <h4 class="text-center">CONTACT LOCATION</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245619.35173372366!2d74.34362264988542!3d15.866981044810673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf669f5095362f%3A0x7e34b31edcdefb5f!2sBelagavi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700281080210!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="card" style="height: 343px;">
+                <h4 class="text-center">CONTACT DETAILS</h4>
+                <ul>
+                    <li style="font-size: 22px;">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Belagavi, Karnataka, <br>
+                        PIN-590001 
+                    </li><br>
+                    <li style="font-size: 22px;">
+                      <i class="bi bi-envelope-at-fill"></i>
+                        iiiQbets@gmail.com
+                    </li><br>
+                    <li style="font-size: 22px;">
+                        <i class="bi bi-telephone-fill"></i>
+                        +91-8754321098
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-lg-20">
+      <div class="card" style="width: 100%;">
+        <div class="card-header">
+          <h2>Contact Us</h2>
+        </div>
+        <div class="card-body">
+          <!-- Contact Us form -->
+          <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+            <div class="form-group">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="contactFormModel.name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email:</label>
+              <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="contactFormModel.email">
+            </div>
+
+            <div class="form-group">
+              <label for="mobile">Mobile No.:</label>
+              <input type="mobile" id="mobile" name="mobile" class="form-control" required pattern="0-9" [(ngModel)]="contactFormModel.number">
+              
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" class="form-control" rows="4" required [(ngModel)]="contactFormModel.message"></textarea>
+            </div><br>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div *ngIf="formSubmitted" class="alert alert-success mt-3" role="alert">
+              Form submitted successfully!
+            </div>
+            <div *ngIf="formError" class="alert alert-danger mt-3" role="alert">
+              Form submission failed. Please try again later.
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col-lg-6">
+      <div class="card">
+        <!-- Contact Location -->
+        <div class="card-header">
+        <h4 class="text-center">CONTACT LOCATION</h4>
+      </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245619.35173372366!2d74.34362264988542!3d15.866981044810673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf669f5095362f%3A0x7e34b31edcdefb5f!2sBelagavi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700281080210!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card" style="height: 373px; background-color:#d9e9f3;">
+        <!-- Contact Details -->
+        <div class="card-header">
+          <h4 class="text-center">CONTACT DETAILS</h4>
+        </div>
+                <ul style="margin-top: 45px;">
+                    <li style="font-size: 22px;">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Belagavi, Karnataka, <br>
+                        PIN-590001 
+                    </li><br>
+                    <li style="font-size: 22px;">
+                      <i class="bi bi-envelope-at-fill"></i>
+                        iiiQbets@gmail.com
+                    </li><br>
+                    <li style="font-size: 22px;">
+                        <i class="bi bi-telephone-fill"></i>
+                        +91-8754321098
+                    </li>
+                </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="col">
+       <google-map height="400px"
+             width="750px" 
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="addMarker($event)">
+            <map-marker *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              [options]="markerOptions">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245619.35173372366!2d74.34362264988542!3d15.866981044810673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf669f5095362f%3A0x7e34b31edcdefb5f!2sBelagavi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700281080210!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </map-marker>
+       </google-map>
+     </div>
+
+     <div class="col">
+      
+     </div> -->
+
+     <!-- <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-4 pt-5">
+      <label>Email : </label>
+      <a href="#">iiiQbets@gmail.com</a>
+    </div>
+    <div class="col-md-4 pt-5">
+      <label>Contact No. : </label>
+      <a href="#">+91-1234788349</a>
+    </div>
+    </div>
+  </div> -->
+
+ <!-- <div class="container">
+    <div class="row ">
+      <div class="card">
+      <div class="col-lg-6 ">
+      <h4>CONTACT LOCATION</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245619.35173372366!2d74.34362264988542!3d15.866981044810673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf669f5095362f%3A0x7e34b31edcdefb5f!2sBelagavi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700281080210!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </div>
+
+    <div class="card">
+    <div class="col-lg-6">
+      <h4>CONTACT DETAILS</h4>
+      <ul>
+        <li style="font-size: 22px;">
+          <i class="bi bi-geo-alt-fill"></i>
+          Belagavi<br>
+          Karnataka<br>
+          PIN-590001
+        </li>
+        <li style="font-size: 22px;">
+          <i class="bi bi-envelope-at-fill"></i>
+          iiiQbets@gmail.com
+        </li>
+        <li style="font-size: 22px;">
+          <i class="bi bi-telephone-fill"></i>
+          +91-8754321098
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+  </div> -->
+  

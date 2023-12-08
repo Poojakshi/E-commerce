@@ -1,0 +1,25 @@
+.card {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .payment-method {
+    padding: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 0;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  

@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #d9e9f3">
+  <!-- <nav class="navbar navbar-expand-lg navbar-primary bg-primary"> -->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">E-Commerce</a>
+      <button class="navbar-toggler" (click)="toggleNavBar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="Active">Home<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/account" routerLinkActive="Active" *ngIf="isUser">Admin</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/adetails" routerLinkActive="Active" >address details</a>
+          </li>  -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/pay" routerLinkActive="Active" >pay</a>
+          </li>  -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/check" routerLinkActive="Active" >check2</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart" routerLinkActive="Active" *ngIf="isUser">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/orders" routerLinkActive="Active" *ngIf="isUser">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="Active">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="Active" *ngIf="!isUser">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup" routerLinkActive="Active" *ngIf="!isUser">SignUp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile" routerLinkActive="Active" *ngIf="isUser">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-danger" routerLink="/logout" routerLinkActive="Active" (click)='logout()' *ngIf="isUser">LogOut</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

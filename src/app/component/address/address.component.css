@@ -1,0 +1,29 @@
+/* Example CSS for form styling */
+.my-form {
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .address-details,
+  .contact-details {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .success-message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #dff0d8;
+    border: 1px solid #c8ebc8;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .address-details,
+    .contact-details {
+      padding: 15px;
+    }
+  }
+  

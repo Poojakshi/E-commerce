@@ -1,0 +1,35 @@
+/* .checkout h1{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.checkout h3{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.form{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+} */
+.product-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.product-details p {
+  margin: 5px 0;
+}
+
+.custom-message {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.card{
+  margin-top: 10px;
+}

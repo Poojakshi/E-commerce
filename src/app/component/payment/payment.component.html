@@ -1,0 +1,43 @@
+<!-- <p>payment works!</p> -->
+<!-- <div class="payment-method">
+    <h3>Payment Method</h3>
+    <div>
+      <label>
+        <input type="radio" name="payment" (change)="selectPayment('cash on delivery')" />
+        Cash on Delivery
+      </label>
+    </div>
+  </div> -->
+
+  <div class="card">
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Payment Method</h3>
+      <form class="payment-method">
+        <div class="form-group">
+          <label>
+            <input type="radio" name="payment" (change)="selectPayment('cash on delivery')" />
+            Cash on Delivery
+          </label>
+        </div>
+        <!-- <div>
+      <label>
+        <input type="radio" name="payment" (change)="selectPayment('online payment')" />
+        Online Payment
+      </label>
+    </div> -->
+      </form>
+      <button class="btn btn-primary" (click)="onClickContinue()">Continue</button>
+    </div>
+  </div>
+  
+
+  <!-- <div>
+      <label>
+        <input type="radio" name="payment" (change)="selectPayment('online payment')" />
+        Online Payment
+      </label>
+    </div> -->
+  

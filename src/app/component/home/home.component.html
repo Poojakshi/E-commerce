@@ -1,0 +1,46 @@
+
+<div class="body">
+  <div class="row">
+      <div class="col-12 col-md-6 col-lg-3" *ngFor="let p of Products; index as i">
+
+           <div class="card" style="width: 100%;">
+              <img class="card-img-top" [src]="p.ProductPath" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ p.Name }}</h5>
+                <p class="card-text"> {{ p.Price | currency: 'INR'}}</p>
+                
+                <div class="row">
+                  <div class="col-md-12 col-6 ">
+                    <button class="btn btn-primary btn-block custom-btn" (click)="addToCart(i)" *ngIf="add !== i">Add to Cart</button>
+                  </div>
+                  <!-- <div class="col-md-6 col-6 ">
+                    <button class="btn btn-primary btn-block custom-btn" (click)="buyNow(Products)">Buy Now</button>
+                  </div> -->
+                </div>
+                
+
+                <div *ngIf="add === i">
+                  <input type="number" class="form-control" placeholder="Amount (kg)" #amount>
+                  <button class="btn btn-primary btn-block" (click)="buy(amount.value)">Add</button>
+                  <!-- <div *ngIf="p.successMessage" class="alert alert-success">
+                    {{ p.successMessage }}
+                  </div> -->
+                </div>
+                
+                <!-- <div *ngIf="successMessage" class="alert alert-success">
+                  {{ successMessage }}
+                </div> -->
+
+              </div>
+           </div>
+      </div>
+  </div>
+</div>
+<div *ngIf="successMessage" class="alert alert-success">
+  {{ successMessage }}
+</div>
+
+
+
+
+

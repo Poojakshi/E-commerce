@@ -1,0 +1,16 @@
+/* .form-control{
+    width: 50%;
+} */
+
+.body {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+    .body {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}

@@ -1,0 +1,116 @@
+<!-- <p>address works!</p> -->
+<form [formGroup]="addressForm" class="my-form">
+    <button type="button" class="btn btn-primary" routerLink="/checkout" style="margin-bottom: 5px;">Back</button><br>
+    <div class="address-details">
+        <h3>Shipping Details</h3>
+
+        <div class="form-group">
+            <label for="area">Area</label>
+            <textarea class="form-control" id="area" name="area" formControlName="area" required></textarea>
+            <div class="alert alert-danger" *ngIf="addressForm.controls['area'].errors?.['required'] && addressForm.controls['area']?.touched">Area is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" class="form-control" id="pincode" name="pincode" formControlName="pincode"
+                required minlength="6" maxlength="6" pattern="[0-9]*">
+            <div *ngIf="addressForm.controls['pincode']?.errors">
+                <div class="alert alert-danger" *ngIf="addressForm.controls['pincode']?.errors?.['required'] && addressForm.controls['pincode']?.touched">Pincode is required.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['pincode']?.errors?.['minlength'] && addressForm.controls['pincode']?.touched">Pincode must be 6 digits.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['pincode']?.errors?.['maxlength'] && addressForm.controls['pincode']?.touched">Pincode must be 6 digits.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['pincode']?.errors?.['pattern'] && addressForm.controls['pincode']?.touched">Invalid pincode. Please enter numbers only.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" formControlName="city" required pattern="[a-zA-Z]+">
+            <div class="alert alert-danger" *ngIf="addressForm.controls['city']?.errors?.['required'] && addressForm.controls['city']?.touched && addressForm.controls['city']?.invalid">City is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State</label>
+            <select class="form-control" id="state" name="state" formControlName="state" required>
+                <option value="">Select State</option>
+                <option *ngFor="let state of indianStates" [value]="state">{{ state }}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="addressForm.controls['state']?.errors?.['required'] && addressForm.controls['state']?.touched">State is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name" required pattern="[a-zA-Z]+">
+            <div class="alert alert-danger" *ngIf="addressForm.controls['name']?.errors?.['required'] && addressForm.controls['name']?.touched && addressForm.controls['name']?.invalid">Name is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="number">Contact Number</label>
+            <input type="text" class="form-control" id="number" name="number" formControlName="number" required pattern="[0-9]*"
+            minlength="10" maxlength="10">
+                <div class="alert alert-danger" *ngIf="addressForm.controls['number']?.errors?.['required'] && addressForm.controls['number']?.touched">Contact Number is required.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['number']?.errors?.['minlength'] && addressForm.controls['number']?.touched">Contact Number must be 10 digits.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['number']?.errors?.['maxlength'] && addressForm.controls['number']?.touched">Contact Number must be 10 digits.</div>
+                <!-- <div class="alert alert-danger" *ngIf="addressForm.controls['contactNumber']?.errors?.['pattern'] && addressForm.controls['contactNumber'].touched">Invalid Contact Number. Please enter numbers only.</div> -->
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" [disabled]="addressForm.invalid" (click)="saveDetails()">Deliver to this Address</button>
+    <div *ngIf="detailsSaved" class="success-message">Details saved successfully!</div>
+</form>
+
+
+<!-- <form #addressForm="ngForm" class="my-form">
+    <button type="button" class="btn btn-primary" routerLink="/checkout" style="margin-bottom: 5px;">Back</button><br>
+    <div class="address-details">
+        <h3>Shipping Details</h3>
+
+        <div class="form-group">
+            <label for="area">Area</label>
+            <textarea class="form-control" id="area" name="area" [(ngModel)]="shippingDetails.address.area" required></textarea>
+            <div class="alert alert-danger" *ngIf="addressForm.controls['area'].errors?.['required'] && addressForm.controls['area']?.touched">Area is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" class="form-control" id="pincode" name="pincode" [(ngModel)]="shippingDetails.address.pincode"
+                required minlength="6" maxlength="6" pattern="[0-9]*">
+            <div *ngIf="addressForm.controls['pincode']?.errors">
+                <div class="alert alert-danger" *ngIf="addressForm.controls['pincode']?.errors?.['required'] && addressForm.controls['pincode']?.touched">Pincode is required.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['pincode']?.errors?.['minlength'] && addressForm.controls['pincode']?.touched">Pincode must be 6 digits.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['pincode']?.errors?.['maxlength'] && addressForm.controls['pincode']?.touched">Pincode must be 6 digits.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['pincode']?.errors?.['pattern'] && addressForm.controls['pincode']?.touched">Invalid pincode. Please enter numbers only.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" [(ngModel)]="shippingDetails.address.city" required pattern="[a-zA-Z]+">
+            <div class="alert alert-danger" *ngIf="addressForm.controls['city']?.errors?.['required'] && addressForm.controls['city']?.touched && addressForm.controls['city']?.invalid">City is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State</label>
+            <select class="form-control" id="state" name="state" [(ngModel)]="shippingDetails.address.state" required>
+                <option value="">Select State</option>
+                <option *ngFor="let state of indianStates" [value]="state">{{ state }}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="addressForm.controls['state']?.errors?.['required'] && addressForm.controls['state']?.touched">State is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="shippingDetails.address.name" required pattern="[a-zA-Z]+">
+            <div class="alert alert-danger" *ngIf="addressForm.controls['name']?.errors?.['required'] && addressForm.controls['name']?.touched && addressForm.controls['name']?.invalid">Name is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="number">Contact Number</label>
+            <input type="text" class="form-control" id="number" name="number" [(ngModel)]="shippingDetails.address.number" required pattern="[0-9]*"
+            minlength="10" maxlength="10">
+                <div class="alert alert-danger" *ngIf="addressForm.controls['number']?.errors?.['required'] && addressForm.controls['number']?.touched">Contact Number is required.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['number']?.errors?.['minlength'] && addressForm.controls['number']?.touched">Contact Number must be 10 digits.</div>
+                <div class="alert alert-danger" *ngIf="addressForm.controls['number']?.errors?.['maxlength'] && addressForm.controls['number']?.touched">Contact Number must be 10 digits.</div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" [disabled]="addressForm.invalid" (click)="saveDetails()">Deliver to this Address</button>
+    <div *ngIf="detailsSaved" class="success-message">Details saved successfully!</div>
+</form> -->

@@ -1,0 +1,124 @@
+<!-- <p>checkout2 works!</p>////////////// -->
+<!-- <app-checkout (productSelected)="onProductSelected($event)"></app-checkout><br>
+<app-address-details (addressSelected)="onAddressSelected($event)"></app-address-details><br> -->
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Product Details</h3>
+  </div>
+  <div class="card-body">
+    <div *ngFor="let product of products" class="product-details">
+      <p>Name: {{ product?.name }}</p>
+      <p>Price: {{ product?.price }}</p>
+      <p>Amount: {{ product?.amount }}</p>
+      <p>Total Price: {{ product?.price * product?.amount }}</p>
+      <!-- <button class="btn btn-danger" (click)="removeProduct(product)">Remove</button> -->
+      <div *ngIf="message" class="custom-message text-success">{{ message }}</div>
+    </div>
+    <div class="mt-3">
+      <p>Total Number of Items: {{ calculateTotalItems() }}</p>
+      <p>Total Amount: {{ calculateTotalAmount() | currency: 'INR' }}</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-body">
+    <button class="btn btn-primary" (click)="addAddress()">Add New Address</button>
+
+    <div *ngIf="selectedAddress" class="detail-item">
+      <h4>Address:</h4>
+      <p>Area: {{ selectedAddress?.area }}</p>
+      <p>Pincode: {{ selectedAddress?.pincode }}</p>
+      <p>City: {{ selectedAddress?.city }}</p>
+      <p>State: {{ selectedAddress?.state }}</p>
+     
+      <p>Name: {{ selectedAddress?.name }}</p>
+      <p>Number: {{ selectedAddress?.number }}</p>
+    </div>
+    
+    <div *ngFor="let detail of savedDetails" class="detail-item">
+      <div *ngIf="selectedAddress !== detail">
+      <h4>Address:</h4>
+      <p>Area: {{ detail.area }}</p>
+      <p>Pincode: {{ detail.pincode }}</p>
+      <p>City: {{ detail.city }}</p>
+      <p>State: {{ detail.state }}</p>
+      <p>Name: {{ detail.name }}</p>
+      <p>Number: {{ detail.number }}</p>
+      <button class="btn btn-primary" (click)="useAddress(detail)">
+        Use This Address
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Payment Method</h3>
+      <div>
+        <!-- <h3>Selected Payment Method:</h3> -->
+        <p>{{ selectedPaymentMethod }}</p>
+      </div>
+      </div>
+      </div><br>
+      <div *ngIf="successMessage" class="success-message text-success">
+        {{ successMessage }}
+      </div>
+  <div>
+    <button class="btn btn-primary" (click)="placeOrder()">Order Now</button>
+  </div>
+
+
+
+  <!-- <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Product Details</h3>
+    </div>
+    <div class="card-body">
+      <div *ngFor="let product of products" class="product-details">
+        <p>Name: {{ product?.name }}</p>
+        <p>Price: {{ product?.price }}</p>
+        <p>Amount: {{ product?.amount }}</p>
+        <p>Total Price: {{ product?.price * product?.amount }}</p>
+        
+        <div *ngIf="message" class="custom-message text-success">{{ message }}</div>
+      </div>
+      <div class="mt-3">
+        <p>Total Number of Items: {{ calculateTotalItems() }}</p>
+        <p>Total Amount: {{ calculateTotalAmount() | currency: 'INR' }}</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div>
+    <h3>Payment Method</h3>
+
+  <div *ngIf="selectedPaymentMethod === 'cash on delivery'">
+    Cash on Delivery 
+  </div>
+</div> -->
+
+<!-- <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Payment Method</h3>
+      <div *ngIf="selectedPaymentMethod === 'cash on delivery'">
+        <p class="card-text">Cash on Delivery</p>
+      </div>
+    </div>
+  </div><br>
+  <div>
+    <button class="btn btn-primary" (click)="placeOrder()"> Order Now</button>
+  </div>
+   -->
+  
+
+
+
+<!-- <div *ngIf="selectedPaymentMethod === 'online payment'"> -->
+    <!-- Display online payment details -->
+    <!-- Online Payment  -->
+  <!-- </div> -->

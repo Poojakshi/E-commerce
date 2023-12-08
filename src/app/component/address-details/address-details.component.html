@@ -1,0 +1,65 @@
+
+<!-- <div class="card">
+  <div class="card-body">
+    <button class="btn btn-primary" (click)="addAddress()">Add New Address</button>
+
+    <div *ngIf="selectedAddress" class="detail-item">
+      <h4>Address:</h4>
+      <p>Area: {{ selectedAddress?.area }}</p>
+      <p>Pincode: {{ selectedAddress?.pincode }}</p>
+      <p>City: {{ selectedAddress?.city }}</p>
+      <p>State: {{ selectedAddress?.state }}</p>
+     
+      <p>Name: {{ selectedAddress?.name }}</p>
+      <p>Number: {{ selectedAddress?.number }}</p>
+    </div>
+
+    <div *ngFor="let detail of savedDetails" class="detail-item">
+      <div *ngIf="selectedAddress !== detail">
+      <h4>Address:</h4>
+      <p>Area: {{ detail.area }}</p>
+      <p>Pincode: {{ detail.pincode }}</p>
+      <p>City: {{ detail.city }}</p>
+      <p>State: {{ detail.state }}</p>
+      
+      <p>Name: {{ detail.name }}</p>
+      <p>Number: {{ detail.number }}</p>
+      <button class="btn btn-primary" (click)="useAddress(detail)">
+        Use This Address
+      </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="card">
+  <div class="card-body">
+    <button class="btn btn-primary" (click)="addAddress()">Add New Address</button>
+
+    <div *ngIf="selectedAddress" class="detail-item">
+      <h4>Address:</h4>
+      <p>Area: {{ selectedAddress?.area }}</p>
+      <p>Pincode: {{ selectedAddress?.pincode }}</p>
+      <p>City: {{ selectedAddress?.city }}</p>
+      <p>State: {{ selectedAddress?.state }}</p>
+     
+      <p>Name: {{ selectedAddress?.name }}</p>
+      <p>Number: {{ selectedAddress?.number }}</p>
+    </div>
+    
+    <div *ngFor="let detail of savedDetails" class="detail-item">
+      <div *ngIf="selectedAddress !== detail">
+      <h4>Address:</h4>
+      <p>Area: {{ detail.area }}</p>
+      <p>Pincode: {{ detail.pincode }}</p>
+      <p>City: {{ detail.city }}</p>
+      <p>State: {{ detail.state }}</p>
+      <p>Name: {{ detail.name }}</p>
+      <p>Number: {{ detail.number }}</p>
+      <button class="btn btn-primary" (click)="useAddress(detail)">
+        Use This Address
+      </button>
+    </div>
+  </div>
+</div>
+</div>

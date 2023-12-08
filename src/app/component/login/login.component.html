@@ -1,0 +1,17 @@
+<div class="body">
+    <h2 class="text-center">Login</h2>
+    <form #field="ngForm" (ngSubmit)="login(field)">
+        <input ngModel name="email" type="email" #email="ngModel" class="form-control" placeholder="Type your Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/><br>
+        <!-- <div class="alert alert-danger" *ngIf="email.errors?.['required'] && email.touched">Email is required</div>
+        <div class="alert alert-danger" *ngIf="email.errors?.['email'] && email.touched">Email format is incorrect</div> -->
+        <div class="alert alert-danger" *ngIf="email.invalid && email.touched">Email is required and should be correct format</div>
+
+        <input ngModel name="password" type="password" #password="ngModel" class="form-control" placeholder="Type your Password" required minlength="6"><br>
+            <div class="alert alert-danger" *ngIf="password.errors?.['required'] && password.touched">Password is required</div>
+            <div class="alert alert-danger" *ngIf="password.errors?.['minlength'] && password.touched">Password should be more than or equal to 6 character</div>
+    
+            <button class="btn btn-primary" [disabled]="field.invalid" (click)="login(field)">Login</button>
+
+        </form>
+        <p class="text-center mt-3">Don't have an account? <a href="/signup">Signup</a></p>
+    </div>

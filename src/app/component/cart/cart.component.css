@@ -1,0 +1,24 @@
+/* Custom CSS for responsive table */
+/* .table-responsive {
+    overflow-x: auto;
+}
+
+@media screen and (max-width: 767px) {
+    table {
+        width: 100%;
+    }
+
+    td:before {
+        /* content: attr(data-label); */
+        /* float: left;
+        font-weight: bold;
+    }
+} */ 
+
+/* Custom CSS for responsiveness */
+@media screen and (max-width: 767px) {
+    table {
+        width: 100%;
+    }
+}
+
